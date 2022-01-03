@@ -1,0 +1,225 @@
+body {
+    // 因为美工设置好了页面大小750px
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto; //保证在中间
+    background-color: #f2f4f7;
+}
+a {
+    text-decoration: none;
+    color: #707070;
+}
+// 约束当屏幕大于750px 的时候 html字体大小就不变化了
+// 当屏幕超过750px 的时候屏幕字体也不会变
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+// wrap大模块
+.wrap {
+    background-color: #fff;
+    padding-bottom: 1.146667rem;
+}
+//头部区域
+.header {
+    height: 2.133333rem;//设置高度80px
+    border-bottom: 1px solid #EAEAEA; //设置下面的那条白线
+    text-align: center;//文字水平居中
+    line-height: 2.133333rem; //设置行高和高度一致80px 
+    font-size: .933333rem;//文字大小35px
+    color: #1C1C1C;
+}
+//导航栏部分
+.nav {
+    display: flex; //设置flex布局
+    flex-wrap: wrap;//显示不开就换行  
+    padding: 1.173333rem 0 1.6rem 0; // 设置导航的上下边距 上右下左
+    //让六个a ，分成两行，每行3个，给它一行设置33.33%，一行就放3个
+    .item {
+        display: flex;//因为下面用到flex属性，所以一定要给它flex
+        width: 33.33%;
+        // 让图片和文字都居中显示：主轴设置为侧轴，然后设置水平居中
+        flex-direction: column;
+        align-items: center;
+        img {
+            //宽度高度139px
+            width: 3.706667rem;
+            height: 3.706667rem;
+        }
+        span {
+            font-size: .666667rem;
+            color: #707070;
+            //在上面代码统一给所有的a添加设置去掉下线和指定颜色
+        }
+        // 选择前面三个给下边距，就可以实现两行直接的间隔
+        // -n+3 前三个 以此类推-n+5 前五个
+        &:nth-child(-n + 3) {
+            margin-bottom: 1.84rem;
+        }
+    }
+}
+
+// go模块：在摹客上间距看左边18右边10  
+.go {
+    margin: 0 .266667rem 0 .48rem;
+}
+// 就业指导模块:上边40左边22右边24
+.content {
+    padding: 1.066667rem .64rem;
+    background-color: #fff;
+    // 灰色小横杆10
+    margin-top: .266667rem;
+    .con-hd {
+        display: flex;
+        justify-content: space-between;
+        height: 1.013333rem;//蓝色问号大小38X38
+        line-height: 1.013333rem;
+        margin-bottom: 1.04rem;//就业指导文字离下面轮播图的距离
+        h4 {
+            margin: 0;
+            font-size: .746667rem;
+            color: #333333;
+            .icon{
+                display: inline-block;//转换成块级
+                width: 1.013333rem;
+                height: 1.013333rem;
+                //设置图片和文字垂直居中对齐
+                vertical-align: middle;
+            }
+        }
+        .more {
+            font-size: .586667rem;
+            color: #999999;
+        }
+    }
+}
+.get_job_focus {
+    position: relative;
+    // 复制过来的swiper css
+    .swiper-container {
+        // width: 100%;
+        height: 100%;
+        // 根据需求把宽度改为537px
+        width: 14.32rem;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;//这里要设置一下换行竖向显示
+         /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        // 其余的兄弟是0.8
+        transform: scale(0.8);
+        opacity: 0.4;
+        a {
+            width: 9.013333rem;
+            height: 10.026667rem;
+            image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        p {
+            width: 9.013333rem;
+            color: #333333;
+            font-size: .666667rem;
+            margin-top: .64rem;
+        }
+      }
+    //   当前选中的 slide 中间那个
+      .swiper-slide-active,
+      .swiper-slide-duplicate-active{
+        transform: scale(1);
+        z-index: 999;
+        opacity: 1;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        outline: none;
+        &:after {
+            font-size: 1.066667rem;
+            color: #333;
+        }
+    }
+}
+
+// 充电学习模块轮播图
+.study_con {
+    padding-bottom: 3.733333rem;
+}
+.study {
+    .study_fo {
+        padding: .266667rem;
+    }
+      .swiper-slide {
+        font-size: 18px;
+        background: #fff;
+        // 设置盒子的大小
+        width: 7.733333rem;
+        height: 9.066667rem;
+        background-color: #fff;
+        border-radius: .266667rem;
+        // 设置阴影
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+        h5 {
+            font-size: .693333rem;
+            margin: .533333rem 0;
+            font-weight: 400;
+            padding: 0 .266667rem;
+        }
+        p {
+            font-size: .693333rem;
+            color: #FF4400;
+            padding: 0 .266667rem;
+        }
+      }
+}
+
+// 底部模块
+.footer {
+    position: fixed;
+    left: 0;
+    height: 2.933333rem;
+    width: 100%;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 99999;
+    display: flex;
+    padding: .533333rem;
+    border-top: 1px solid #ccc;
+    .item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 1.04rem;
+            height: 1.093333rem;
+        }
+        p {
+            font-size: .586667rem;
+            color:#666666;
+            margin-top: .266667rem;
+        }
+    }
+}
